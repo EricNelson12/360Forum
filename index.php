@@ -4,38 +4,23 @@
 <head>
     <meta charset="utf-8">
     <title>Forum</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/login_script.js"></script>
+    <script src="/js/getPost.js"></script>
 
     <body>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Home |</a>
-                </li>
-                <li>
-                    <a href="#">-Vegan</a>
-                </li>
-                <li>
-                    <a href="#">-Vegatarian</a>
-                </li>
-                <li>
-                    <a href="#">-Soccer</a>
-                </li>
-            </ul>
-        </nav>
-        <header>
-            <H1>420Chan</H1>
-        </header>
+      <?php include('nav.php');?>
         <section class="posts">
             <ol>
                 <li>
-                    Post
+                    <a href = "post.html">Test post please ignore</a>
                 </li>
                 <li>
-                    Post
+                    <a href = "post.html">Cats</a>
                 </li>
                 <li>
-                    Post
+                    <a href = "post.html">Kittens</a>
                 </li>
             </ol>
         </section>
@@ -46,27 +31,34 @@
                 </form>
             </div>
             <div class="spacer">
-                <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+               <?php if (!isset($_SESSION['user'])) {echo '
+                <form id="login-form" method="post" accept-charset="utf-8">
                     <ul>
                         <li>
-                            <label>Login or Register</label>
+                            <label>Login or <a href = "register.html">Register</a></label>
                         </li>
                         <li>
-                            <input type="email" name="usermail" placeholder="username" required>
+                            <input type="username" name="username" placeholder="username" required>
                         </li>
                         <li>
                             <input type="password" name="password" placeholder="password" required>
                         </li>
+                        <p id = "login-error">
+                          Invalid Username or Password
+                        </p>
                         <li>
                             <input class="submit" type="submit" value="Login">
                         </li>
                     </ul>
                 </form>
+                ';}?>
             </div>
             <div class="spacer">
-              <a href = "#">Submit new post</a>
+                <a id = "submit" href="submit.html">Submit new post</a>
             </div>
         </section>
     </body>
-
+    <footer>
+      Copyright © 2008 Eric Nelson. All rights reserved
+    </footer>
 </html>

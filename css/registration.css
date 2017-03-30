@@ -1,0 +1,33 @@
+form {
+  text-align: left;
+    background-color: rgba(205, 205, 205, 0.13);
+    border: solid 1px;
+    padding: 1em;
+    float: none;
+    margin: 4em;
+}
+
+input{
+  width: 100%;
+  display: block;
+  text-align: left;
+  font-size: 1.5em;
+  margin:auto;
+}
+
+#reg-error{
+  color:red;
+  display: none;
+}
+
+#button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    font-size: 16px;
+}
