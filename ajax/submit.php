@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['user'])){
   return;
 }
-echo "test";
+// echo "test";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(isset($_POST['title'])  &&  isset ($_POST['desc'])){
     //Assign new data to variables

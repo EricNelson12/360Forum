@@ -17,6 +17,8 @@ img{
   display: block;
   width:100%;
   float:left;
+  background-color: #efefef;
+  margin-bottom: 1em;
 }
 
 textarea{

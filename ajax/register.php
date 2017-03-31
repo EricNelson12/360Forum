@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
 
           //Validate the image
-          require_once("validateImg.php");
+          require_once("../validateImg.php");
           $imageFileType = validateImage($_FILES);
           if($imageFileType){
 

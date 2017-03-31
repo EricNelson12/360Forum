@@ -1,12 +1,14 @@
 $('document').ready(function()
 {
   var count = 0;
+  var thisPostID = window.location.search.split("&")[0].replace("?","").split("=")[1].toString();
 
+  //Ajax for displaying Post
   $.ajax({
     type: 'POST',
     url: 'ajax/getPost.php',
     //Gets the parameter from the post
-    data: 'url=' + window.location.search.split("&")[0].replace("?","").split("=")[1].toString(),
+    data: 'url=' + thisPostID,
     dataType: 'json',
     success: function(data) {
       p = data[0];
@@ -15,13 +17,31 @@ $('document').ready(function()
     }
   });
 
+
+  //Add listener for comment button
+  $('#comment-form').submit(function(e) {
+    e.preventDefault();
+    //Get the postID and the comment
+    postData = "&comment="+$('#commentArea').val() + "&postID="+thisPostID;
+    $.ajax({
+      type: 'POST',
+      url: '../ajax/postComment.php',
+      data: postData
+    });
+    $('#commentArea').val("");
+  });
+
+
+
+
+  //Repeating function for Displaying and updating comments
   (function worker() {
     // alert("Test");
     $.ajax({
       type: 'POST',
       url: 'ajax/getComments.php',
       //Gets the parameter from the post
-      data: 'url=' + window.location.search.split("&")[0].replace("?","").split("=")[1].toString(),
+      data: 'url=' + thisPostID,
       dataType: 'json',
       success: function(data) {
         for(x in data){
@@ -29,7 +49,7 @@ $('document').ready(function()
           //Only post if not in list already
           var exists = $('#post'+p.commentID);
           if(! exists.length){
-            $('.comments ul:last').append('<li id = "post'+p.commentID+'"><h2>'+p.comment+'</h2><p><i>'+p.username+'</i></p></li>');
+            $('.comments ul:last').prepend('<li class= "comment" id = "post'+p.commentID+'">'+p.comment+'<p><i>'+p.username+'</i></p></li>');
           }
         }
         count++;
@@ -40,7 +60,7 @@ $('document').ready(function()
       },
       complete: function() {
         // Schedule the next request when the current one's complete
-        setTimeout(worker, 5000);
+        setTimeout(worker, 2000);
       }
     });
   })();

@@ -5,30 +5,14 @@
     <title>Test</title>
   </head>
   <body>
-    <form method="post" action= "uploadPic.php" id="registration-form" enctype="multipart/form-data">
+    <form class = "posts" action = "ajax/postComment"  method="post">
 
-        <?php
-        session_start();
-        echo "Uploading File<br />";
-        include("uploadPic.php");
-        try{
-          echo(uploadPhoto($_FILES));
-        }catch (Exception $e) {
-          echo $e;
-        }
-        $pdo = getCon();
-        $stmt = $pdo->prepare("SELECT contentType, image FROM userimages where userID = 35");
-        $stmt->execute();
 
-          if($stmt->rowCount() >0 ){
-            $row = $stmt->fetch();
-          	echo '<img src="data:image/'.$row[0].';base64,'.base64_encode($row[1]).'"/>';
-          }else{
-            echo "No Picture found";
-          }
+            <textarea name="comment" placeholder="Comment here :)" required></textarea>
+            <input type="text" name="postID">
 
-        echo "<br/>Done";
-        ?>
+        <input type="submit" value="Submit">'
+
     </form>
   </body>
 </html>
