@@ -1,5 +1,7 @@
 
-
+img{
+  max-width: 400px;
+}
 
 figure{
   display: block;
@@ -21,7 +23,7 @@ textarea{
   width: 100%;
 }
 
-.posts {
+.posts,.comments {
     display: block;
     padding: 1em;
     float: left;

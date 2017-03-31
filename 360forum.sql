@@ -32,6 +32,21 @@ CREATE TABLE `userposts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE `comments` (
+	commentID int(11) NOT NULL AUTO_INCREMENT,
+	postID int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `comment` varchar(500) NOT NULL,  
+  KEY (`postID`),
+  KEY `userID` (`userID`),
+  PRIMARY KEY (commentID),
+  CONSTRAINT `userposts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`postID`) REFERENCES `userposts` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE
+  );
+
+
 --
 -- Table structure for table `users`
 --

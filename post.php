@@ -8,19 +8,26 @@
     <link rel="stylesheet" type="text/css" href="css/post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/login_script.js"></script>
+    <script src="js/displayPost.js"></script>
     <body>
         <?php include('nav.php');?>
-        <section class="posts">
+        <section class = "posts">
             <figure>
                 <img src="http://cdn3-www.cattime.com/assets/uploads/2011/08/best-kitten-names-1.jpg" alt="Kitty">
                 <figcaption>Look at this cute kitty!</figcaption>
             </figure>
+            <?php if (isset($_SESSION['user'])) {echo '
             <form class = "comment" action="" method="post">
                 <div>
                     <textarea name="comments" placeholder="Comment here :)" required></textarea>
                 </div>
                 <input id="button" type="submit" value="Submit">
-            </form>
+            </form>';}?>
+        </section>
+        <section class = "comments">
+          <ul>
+
+          </ul>
         </section>
         <?php include('sidebar.php'); ?>
     </body>

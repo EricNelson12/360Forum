@@ -127,7 +127,7 @@ nav {
 }
 
 
-.posts {
+.posts, .comments{
     float: left;
     width: 50%;
 }
