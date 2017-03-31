@@ -14,8 +14,8 @@ $('document').ready(function()
           //Only post if not in list already
           var exists = $('#post'+p.postID)
           if(! exists.length){
-            $('.posts li:last').after('<li id = "post'+p.postID+'" id><img src="data:image/(png|jpg|jpeg);base64,'+p.image+'"/>'+
-            p.title+'   '+p.postText+ '</li>');
+            $('.posts ol:last').append('<li id = "post'+p.postID+'" id><h2><a href = "post.php?id='+p.postID+'">'+
+            p.title+'</a></h2><img src="data:image/(png|jpg|jpeg);base64,'+p.image+'"/>   '+p.postText+ '</li>');
           }
         }
         count++;

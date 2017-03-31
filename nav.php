@@ -2,13 +2,17 @@
 .usernav {
   float:right;
 }
+nav{
+  font-size: 1em;
+  padding: 0em 1em 0em 1em;
+}
 </style>
 
 
 <nav>
     <ul>
         <li>
-            <a href="#">Home |</a>
+            <a href="/index.php">Home |</a>
         </li>
         <li>
             <a href="#">-Cats</a>
@@ -31,7 +35,7 @@
 
         }else{
           echo "<li class=\"usernav\">
-            <a href=\"/login\">Login</a>
+            <a href=\"/register.html\">Register</a>
           </li>";
         }
         ?>
