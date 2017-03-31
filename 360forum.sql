@@ -1,8 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
---
--- Host: localhost    Database: lab8
--- ------------------------------------------------------
--- Server version	5.7.14
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,12 +19,13 @@ DROP TABLE IF EXISTS `userposts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userposts` (
-  `postID` int(11) NOT NULL AUTO_INCREMENT,
-  `userID` int(11) NOT NULL,  
-  title varchar(50) NOT NULL,
-  `imgPath` varchar(200),
+	postID int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `contentType` varchar(255) NOT NULL,
+  `image` MEDIUMBLOB NOT NULL,
   postText varchar(500) NOT NULL,
   upVotes int(11) NOT NULL DEFAULT 0,
+  title varchar(50),
   PRIMARY KEY (`postID`),
   KEY `userID` (`userID`),
   CONSTRAINT `userposts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -48,14 +45,36 @@ CREATE TABLE `users` (
   `lastName` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-	picURL varchar(200),
   `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `contentType` varchar(255),
+  `image` MEDIUMBLOB ,
   PRIMARY KEY (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `userID` (`userID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+
+
+DROP TABLE IF EXISTS `userimages`;
+CREATE TABLE `userimages` (
+  `userID` int(11) NOT NULL,
+  `contentType` varchar(255) NOT NULL,
+  `image` blob NOT NULL,
+  imageID int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(imageID)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+ALTER TABLE `userimages`
+  ADD CONSTRAINT `userimages_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

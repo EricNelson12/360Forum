@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 include('./getconnection.php');
 
 //Get All posts
@@ -13,8 +12,11 @@ if($stmt->rowCount() >0 ){
   // echo var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
   echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
 }else{
+
   return false;
 }
+return false;
+
 
 
 

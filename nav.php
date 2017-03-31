@@ -25,7 +25,7 @@
         session_start();
         if (isset($_SESSION['user'])) {
           echo "<li class=\"usernav\">
-            <a  href=\"/logout\">Logout</a>
+            <a  href=\"logout.php\">Logout</a>
           </li>";
           echo "<li class=\"usernav\"><a>Logged in as ".$_SESSION['user']."</a></li>";
 

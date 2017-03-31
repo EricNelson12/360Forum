@@ -2,7 +2,7 @@
 
 session_start();
 
-include('getconnection.php');
+require_once('getconnection.php');
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset ($_POST['username']) &&  isset ($_POST['password'])){
@@ -11,8 +11,11 @@ include('getconnection.php');
       $username = $_POST['username'];
       $password = $_POST['password'];
 
-      if(login($username,$password)){
+      $id = login($username,$password);
+
+      if($id){
         $_SESSION['user'] = $username;
+        $_SESSION['id']   = $id;
         //This goes back to Ajax js method
         echo  json_encode(array("username" => $username));
         exit();
@@ -31,11 +34,12 @@ include('getconnection.php');
       $stmt->execute([$u,md5($p)]);
       $user = $stmt->fetch();
       if($stmt->rowCount() >0 ){
-        return true;
+        return $user['userID'];
       }else{
         return false;
       }
     }
+
 
 
 

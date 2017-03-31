@@ -6,8 +6,8 @@
     <title>Forum</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/js/login_script.js"></script>
-    <script src="/js/getPost.js"></script>
+    <script src="js/login_script.js"></script>
+    <script src="js/getPost.js"></script>
 
     <body>
       <?php include('nav.php');?>

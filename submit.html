@@ -10,17 +10,17 @@
 
 <body>
       <h1>Submit post</h1><br />
-      <form action="/action_page.php">
+      <form method="post" action = "ajax/submit.php" enctype="multipart/form-data">
         <label for="username">Board</label>
-        <input type="text"  id="username" required><br>
+        <input type="text"   id="username" required><br>
         <label for="username">Post Title</label>
-        <input type="text"  id="username" required><br>
+        <input type="text" name = "title"  id="username" required><br>
         <label for="password">Description</label>
-        <input type="text"  id="password" required><br>
+        <input type="text" name = "desc"  id="password" required><br>
         <label for="text">Link</label>
         <input type="text"  id="password" required><br>
         <label for="username" >Image</label><br />
-        <input type="file"  id="image" required><br><br />
+        <input type="file" name="fileToUpload" id="fileToUpload" required><br><br />
         <input id = "button" type="submit" value="Submit">
     </form>
 </body>

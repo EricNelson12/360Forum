@@ -16,10 +16,14 @@ $('document').ready(function()
         cache: false,
         processData:false,
         success: function(data){
-          if(data != 'ok'){
+          // Had to check for string because login is echoing something too.
+          if(! (data == "ok")){
               $('#reg-error').css("display","inline");
             $('#reg-error').html(data);
           }else{
+            // $('#reg-error').css("display","inline");
+            // $('#reg-error').html("THIS IS GOOD:"+data);
+
             window.location.replace("index.php");
           }
         }
