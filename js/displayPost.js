@@ -4,7 +4,7 @@ $('document').ready(function()
 
   $.ajax({
     type: 'POST',
-    url: '../ajax/getPost.php',
+    url: 'ajax/getPost.php',
     //Gets the parameter from the post
     data: 'url=' + window.location.search.split("&")[0].replace("?","").split("=")[1].toString(),
     dataType: 'json',
@@ -19,7 +19,7 @@ $('document').ready(function()
     // alert("Test");
     $.ajax({
       type: 'POST',
-      url: '../ajax/getComments.php',
+      url: 'ajax/getComments.php',
       //Gets the parameter from the post
       data: 'url=' + window.location.search.split("&")[0].replace("?","").split("=")[1].toString(),
       dataType: 'json',

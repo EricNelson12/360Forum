@@ -6,7 +6,7 @@ $('document').ready(function()
     // alert("Test");
     $.ajax({
       type: 'POST',
-      url: '../ajax/getPosts.php',
+      url: 'ajax/getPosts.php',
       dataType: 'json',
       success: function(data) {
         for(x in data){

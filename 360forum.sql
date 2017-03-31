@@ -42,7 +42,7 @@ CREATE TABLE `comments` (
   KEY (`postID`),
   KEY `userID` (`userID`),
   PRIMARY KEY (commentID),
-  CONSTRAINT `userposts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`postID`) REFERENCES `userposts` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE
   );
 

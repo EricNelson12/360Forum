@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['user'])){
   return;
 }
-
+echo "test";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(isset($_POST['title'])  &&  isset ($_POST['desc'])){
     //Assign new data to variables
@@ -26,11 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       require_once("getconnection.php");
       $pdo = getCon();
       if($pdo->prepare($sql)->execute([$_SESSION['id'],$desc,$title,$imageData,$imageFileType])){
-        header("Location: /index.php");
+        header("Location: ../index.php");
       }else{
         echo "Database Error";
       }
-    }
+    }else{echo "Couldn't Validate IMage";}
+
   }
 }
 
