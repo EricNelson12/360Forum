@@ -2,7 +2,8 @@ $('document').ready(function()
 {
   var count = 0;
 
-  $('nav li').click(function(e) {
+  $('.board').click(function(e) {
+
     e.preventDefault();
     $('.posts ul:last').empty();
     postData = "&board="+e.target.innerText;
