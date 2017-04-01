@@ -12,10 +12,10 @@
     <body>
       <?php include('nav.php');?>
         <section class="posts">
-            <ol>
+            <ul>
 
 
-            </ol>
+            </ul>
         </section>
         <?php include('sidebar.php');?>
     </body>

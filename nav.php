@@ -12,16 +12,16 @@ nav{
 <nav>
     <ul>
         <li>
-            <a href="/index.php">Home |</a>
+            <a id ="1" href="/index.php">All</a>
         </li>
         <li>
-            <a href="#">-Cats</a>
+            <a id ="2" href="#">Cats</a>
         </li>
         <li>
-            <a href="#">-Kittens</a>
+            <a id ="3" href="#">Kittens</a>
         </li>
         <li>
-            <a href="#">-Random</a>
+            <a id ="4" href="#">Random</a>
         </li>
         </li>
 

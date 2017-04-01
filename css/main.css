@@ -127,20 +127,20 @@ nav {
 }
 
 
-.posts, .comments{
+.posts{
     float: left;
     width: 50%;
 }
 
 
-.posts ol li {
+.posts ul li {
     border-bottom: .1px solid;
     padding: 1em;
     width: 100%;
 }
 
 
-.posts ol li a:hover {
+.posts ul li a:hover {
   color: red;
 
 }

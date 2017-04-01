@@ -15,26 +15,11 @@
 -- Table structure for table `userposts`
 --
 
-DROP TABLE IF EXISTS `userposts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `userposts` (
-	postID int(11) NOT NULL AUTO_INCREMENT,
-  `userID` int(11) NOT NULL,
-  `contentType` varchar(255) NOT NULL,
-  `image` MEDIUMBLOB NOT NULL,
-  postText varchar(500) NOT NULL,
-  upVotes int(11) NOT NULL DEFAULT 0,
-  title varchar(50),
-  PRIMARY KEY (`postID`),
-  KEY `userID` (`userID`),
-  CONSTRAINT `userposts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 
 DROP TABLE IF EXISTS `comments`;
-CREATE TABLE `comments` (
+	CREATE TABLE `comments` (
 	commentID int(11) NOT NULL AUTO_INCREMENT,
 	postID int(11) NOT NULL,
   `userID` int(11) NOT NULL,
@@ -46,6 +31,23 @@ CREATE TABLE `comments` (
   FOREIGN KEY (`postID`) REFERENCES `userposts` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE
   );
 
+DROP TABLE IF EXISTS `userposts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userposts` (
+	postID int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `contentType` varchar(255) NOT NULL,
+  `image` MEDIUMBLOB NOT NULL,
+  postText varchar(500) NOT NULL,
+  upVotes int(11) NOT NULL DEFAULT 0,
+  title varchar(50),
+  boardName varchar(50) NOT NULL DEFAULT 'All',
+  PRIMARY KEY (`postID`),
+  KEY `userID` (`userID`),
+  CONSTRAINT `userposts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `users`

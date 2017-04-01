@@ -12,8 +12,8 @@ $('document').ready(function()
     dataType: 'json',
     success: function(data) {
       p = data[0];
-      $('.posts img').replaceWith('<img src="data:image/(png|jpg|jpeg);base64,'+p.image+'"/>');
-      $('.posts figcaption').replaceWith('<figcaption>'+p.title+'</figcaption>');
+      $('img').replaceWith('<img src="data:image/(png|jpg|jpeg);base64,'+p.image+'"/>');
+      $('figcaption').replaceWith('<figcaption>'+p.title+'</figcaption>');
     }
   });
 
@@ -49,7 +49,8 @@ $('document').ready(function()
           //Only post if not in list already
           var exists = $('#post'+p.commentID);
           if(! exists.length){
-            $('.comments ul:last').prepend('<li class= "comment" id = "post'+p.commentID+'">'+p.comment+'<p><i>'+p.username+'</i></p></li>');
+            $(' ul:last').prepend('<li class= "comment" id = "post'+p.commentID+
+            '"><p>'+p.comment+'</p><p><i>'+p.username+'</i></p></li>');
           }
         }
         count++;

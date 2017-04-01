@@ -11,29 +11,30 @@
     <script src="js/displayPost.js"></script>
     <body>
         <?php include('nav.php');?>
-        <section class = "posts">
+        <?php include('sidebar.php'); ?>
+        <section>
             <figure>
                 <img src="http://cdn3-www.cattime.com/assets/uploads/2011/08/best-kitten-names-1.jpg" alt="Kitty">
                 <figcaption>Look at this cute kitty!</figcaption>
             </figure>
 
-            <form class = "posts" id="comment-form"  method="post">
+            <form  id="comment-form"  method="post">
               <?php if (isset($_SESSION['user'])) {echo '
                 <div>
-                    <textarea id= "commentArea" name="comment" placeholder="Comment here :)" required></textarea>
+                    <textarea maxlength = "500" id= "commentArea" name="comment" placeholder="Comment here :)" required></textarea>
                 </div>
                 <input type="submit" value="Submit">'
                 ;}else{ echo '
-                  <div style = "text-align:center"><p>Please <a href = "register.html">Register</a> to comment</p>';}?>
+                  <div style = "text-align:center"><p>Please <a href = "register.html">Register</a> to comment</p></div>';}?>
             </form>
-        <div class = "comments">
-          <ul>
+
+          <ul >
 
           </ul>
-        </div>
+
 
         </section>
-        <?php include('sidebar.php'); ?>
+
     </body>
     <error></error>
     <footer>
