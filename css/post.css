@@ -9,6 +9,12 @@ figure{
 }
 
 
+
+i{
+ color: grey;
+ font-size:.9em;
+}
+
 .comment{
   word-wrap: break-word;
   width:50%;

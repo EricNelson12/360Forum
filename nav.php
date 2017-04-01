@@ -12,16 +12,16 @@ nav{
 <nav>
     <ul>
         <li>
-            <a class = "board" href="/index.php">All</a>
+            <a class = "board" href="index.php">All</a>
         </li>
         <li>
-            <a  class = "board" href="#">Cats</a>
+            <a  class = "board" href="index.php">Cats</a>
         </li>
         <li>
-            <a class = "board" href="#">Kittens</a>
+            <a class = "board" href="index.php">Kittens</a>
         </li>
         <li>
-            <a class = "board" href="#">Random</a>
+            <a class = "board" href="index.php">Random</a>
         </li>
         </li>
 
@@ -35,7 +35,7 @@ nav{
 
         }else{
           echo "<li class=\"usernav\">
-            <a href=\"/register.html\">Register</a>
+            <a href=\"../register.html\">Register</a>
           </li>";
         }
         ?>
@@ -43,5 +43,5 @@ nav{
     </ul>
 </nav>
 <header>
-    <H1>Spreddit</H1>
+    <H1><a href = "index.php">Spreaddit</a></H1>
 </header>

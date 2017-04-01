@@ -5,6 +5,7 @@ if (!isset($_SESSION['id'])){
 }
 // echo var_dump($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   if(isset($_POST['comment']) && isset($_POST['postID'])){
     //Assign new data to variables
     $comment = $_POST['comment'];

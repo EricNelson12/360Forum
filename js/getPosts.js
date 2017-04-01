@@ -3,11 +3,12 @@ $('document').ready(function()
   var count = 0;
 
   $('.board').click(function(e) {
-
+    $('.loader').show();
     e.preventDefault();
     $('.posts ul:last').empty();
     postData = "&board="+e.target.innerText;
     // alert(e.target.innerText);
+    $('header h1').text("Spreaddit "+e.target.innerText);
     $.post("../ajax/setBoard.php",postData);
   });
 
@@ -34,6 +35,7 @@ $('document').ready(function()
 
       },
       complete: function() {
+	$('.loader').hide();
         // Schedule the next request when the current one's complete
         setTimeout(worker, 5000);
       }

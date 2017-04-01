@@ -6,6 +6,7 @@
     <title>Forum</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/post.css">
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/login_script.js"></script>
     <script src="js/displayPost.js"></script>

@@ -7,6 +7,7 @@ include("getconnection.php");
 
 //Checks to make sure values are POSTED
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   if(isset($_POST['firstname'])  &&  isset ($_POST['lastname']) &&  isset ($_POST['username'])
   &&  isset ($_POST['email']) &&  isset ($_POST['password'])){
 

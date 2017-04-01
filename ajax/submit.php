@@ -5,10 +5,14 @@ if (!isset($_SESSION['user'])){
 }
 // echo "test";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   if(isset($_POST['title'])  &&  isset ($_POST['desc'])){
     //Assign new data to variables
     $title = $_POST['title'];
     $desc = $_POST['desc'];
+
+    
+
 
     $boardName = "Cats";
 

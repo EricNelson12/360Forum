@@ -36,7 +36,7 @@ $('document').ready(function()
 
   //Repeating function for Displaying and updating comments
   (function worker() {
-    // alert("Test");
+    // y("Test");
     $.ajax({
       type: 'POST',
       url: 'ajax/getComments.php',
