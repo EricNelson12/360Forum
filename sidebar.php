@@ -1,7 +1,7 @@
 <section class="sidebar">
     <div class="spacer">
-        <form>
-            <input type="text" name="q" placeholder="search" tabindex="20">
+        <form class = "search">
+            <input  id = "searchQuery" type="text" name="searchQuery" placeholder="Press enter to search" tabindex="20">
         </form>
     </div>
     <div class="spacer">

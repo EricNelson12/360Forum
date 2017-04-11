@@ -2,6 +2,19 @@ $('document').ready(function()
 {
   var count = 0;
 
+  $('.search').submit(function(e) {
+    alert($('#searchQuery').val());
+    $('.loader').show();
+    e.preventDefault();
+    $('.posts ul:last').empty();
+    postData = "&board=search";
+    $('header h1').text("Search: "+$('#searchQuery').val());
+    $.post("../ajax/setBoard.php",postData);
+    postData = "&searchQuery="+$('#searchQuery').val();
+    $.post("../ajax/setSearch.php",postData);
+  });
+
+
   $('.board').click(function(e) {
     $('.loader').show();
     e.preventDefault();

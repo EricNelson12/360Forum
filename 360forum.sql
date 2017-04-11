@@ -64,7 +64,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `contentType` varchar(255),
-  `image` MEDIUMBLOB ,
+  `image` MEDIUMBLOB NOT NULL,
   PRIMARY KEY (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `userID` (`userID`)

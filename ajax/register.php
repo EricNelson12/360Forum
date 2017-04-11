@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           //store the contents of the files in memory in preparation for upload
           $imageData = file_get_contents($_FILES['fileToUpload']['tmp_name']);
+          $imageData = base64_encode($imageData);
 
           //Write all new user info into database, including image
           $sql = "INSERT INTO users (username,firstName,lastName ,email,password,contentType, image) VALUES (?,?,?,?,?,?,?)";
